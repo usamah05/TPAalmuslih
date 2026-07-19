@@ -1,0 +1,40 @@
+/* =========================================================
+   STYLE.CSS — TPA AL MUSLIH AIK IJO
+   Berisi seluruh custom CSS di luar utility class Tailwind.
+========================================================= */
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; }
+.font-display { font-family: 'Reem Kufi', sans-serif; }
+
+/* Pola geometris islami tipis untuk latar belakang Hero & Galeri */
+.pattern-overlay {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.18) 1.5px, transparent 0);
+  background-size: 26px 26px;
+}
+
+/* Sembunyikan scrollbar pada carousel, tapi tetap bisa digulir */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Animasi masuk untuk modal "Tambah Berita" */
+.modal-enter { animation: modalIn 0.25s ease-out both; }
+@keyframes modalIn {
+  0%   { opacity: 0; transform: scale(0.95) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Efek garis bawah animasi pada tautan navbar (desktop) */
+.nav-link { position: relative; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 0; height: 2px;
+  background: #f59e0b;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* Keyframes tambahan yang dipakai lewat class Tailwind kustom (animate-fadeUp / animate-floaty)
+   didefinisikan di tailwind.config pada index.html, jadi tidak perlu diulang di sini. */
