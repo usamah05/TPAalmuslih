@@ -50,17 +50,17 @@ document.addEventListener('DOMContentLoaded', function () {
      2. GALERI: carousel 11 foto + navigasi + indikator titik
   --------------------------------------------------------- */
   const galleryPhotos = [
-    { url: 'assets/Mtto.jpeg', caption: 'Mengaji bersama di kelas' },
-    { url: 'assets/WhatsApp Image 2026-07-15 at 06.51.26 (1).jpeg', caption: 'Belajar membaca Al-Qur\'an' },
-    { url: 'assets/WhatsApp Image 2026-07-15 at 06.51.26 (2).jpeg', caption: 'Kegiatan bersama santri' },
-    { url: 'assets/WhatsApp Image 2026-07-15 at 06.51.26.jpeg', caption: 'Belajar sambil bermain' },
-    { url: 'assets/WhatsApp Image 2026-07-15 at 06.51.27.jpeg', caption: 'Suasana kelas TPA' },
-    { url: 'assets/WhatsApp Image 2026-07-15 at 06.51.28 (1).jpeg', caption: 'Praktik hafalan doa harian' },
-    { url: 'assets/WhatsApp Image 2026-07-15 at 06.51.28 (2).jpeg', caption: 'Kebersamaan santri' },
-    { url: 'assets/WhatsApp Image 2026-07-15 at 06.51.28.jpeg', caption: 'Buku & Al-Qur\'an santri' },
-    { url: 'assets/WhatsApp Image 2026-07-15 at 06.51.29 (1).jpeg', caption: 'Kegiatan tahfiz harian' },
-    { url: 'assets/WhatsApp Image 2026-07-15 at 06.51.29.jpeg', caption: 'Semangat belajar santri' },
-    { url: 'assets/WhatsApp Image 2026-07-15 at 06.51.25.jpeg/', caption: 'Halaman TPA Al Muslih' },
+    // { url: 'assets/Mtto.jpeg', caption: 'Mengaji bersama di kelas' },
+    { url: 'assets/foto1.jpeg', caption: 'Belajar membaca Al-Qur\'an' },
+    { url: 'assets/foto2.jpeg', caption: 'Kegiatan bersama santri' },
+    { url: 'assets/foto3.jpeg', caption: 'Belajar sambil bermain' },
+    { url: 'assets/foto4.jpeg', caption: 'Suasana kelas TPA' },
+    { url: 'assets/foto5.jpeg', caption: 'Praktik hafalan doa harian' },
+    { url: 'assets/foto6.jpeg', caption: 'Kebersamaan santri' },
+    { url: 'assets/foto7.jpeg', caption: 'Buku & Al-Qur\'an santri' },
+    { url: 'assets/foto8.jpeg', caption: 'Kegiatan tahfiz harian' },
+    { url: 'assets/foto9.jpeg', caption: 'Semangat belajar santri' },
+    { url: 'assets/foto10.jpeg', caption: 'Halaman TPA Al Muslih' },
   ];
 
   const carouselTrack = document.getElementById('carouselTrack');
@@ -100,9 +100,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function goToSlide(index) {
     currentSlide = (index + slideElements.length) % slideElements.length;
-    slideElements[currentSlide].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+
+    const slide = slideElements[currentSlide];
+
+    carouselTrack.scrollTo({
+        left: slide.offsetLeft,
+        behavior: "smooth"
+    });
+
     updateActiveDot();
-  }
+}
 
   prevBtn.addEventListener('click', function () { goToSlide(currentSlide - 1); });
   nextBtn.addEventListener('click', function () { goToSlide(currentSlide + 1); });
@@ -115,136 +122,136 @@ document.addEventListener('DOMContentLoaded', function () {
     autoplayInterval = setInterval(function () { goToSlide(currentSlide + 1); }, 5000);
   });
 
-  /* ---------------------------------------------------------
-     3. SISTEM BERITA: render, tambah berita, simpan localStorage
-  --------------------------------------------------------- */
-  const NEWS_STORAGE_KEY = 'tpaAlMuslihNews';
+  // /* ---------------------------------------------------------
+  //    3. SISTEM BERITA: render, tambah berita, simpan localStorage
+  // --------------------------------------------------------- */
+  // const NEWS_STORAGE_KEY = 'tpaAlMuslihNews';
 
-  const defaultNews = [
-    {
-      title: 'Khataman Al-Qur\'an Santri Angkatan 2026',
-      category: 'Kegiatan',
-      summary: 'Sebanyak 15 santri TPA Al Muslih Aik Ijo mengikuti acara khataman Al-Qur\'an yang berlangsung khidmat dan penuh kebahagiaan bersama orang tua santri.',
-      date: '12 Juli 2026'
-    },
-    {
-      title: 'Pendaftaran Santri Baru Tahun Ajaran Ini Dibuka',
-      category: 'Pengumuman',
-      summary: 'TPA Al Muslih Aik Ijo membuka pendaftaran santri baru untuk kelas Iqro dan Al-Qur\'an. Segera daftarkan putra-putri Anda sebelum kuota penuh.',
-      date: '05 Juli 2026'
-    },
-    {
-      title: 'Santri Raih Juara di Lomba Tilawah Tingkat Kecamatan',
-      category: 'Prestasi',
-      summary: "Ananda Fatimah berhasil meraih juara 1 lomba tilawah Al-Qur'an tingkat kecamatan, membanggakan seluruh keluarga besar TPA.",
-      date: '28 Juni 2026'
-    }
-  ];
+  // const defaultNews = [
+  //   {
+  //     title: 'Khataman Al-Qur\'an Santri Angkatan 2026',
+  //     category: 'Kegiatan',
+  //     summary: 'Sebanyak 15 santri TPA Al Muslih Aik Ijo mengikuti acara khataman Al-Qur\'an yang berlangsung khidmat dan penuh kebahagiaan bersama orang tua santri.',
+  //     date: '12 Juli 2026'
+  //   },
+  //   {
+  //     title: 'Pendaftaran Santri Baru Tahun Ajaran Ini Dibuka',
+  //     category: 'Pengumuman',
+  //     summary: 'TPA Al Muslih Aik Ijo membuka pendaftaran santri baru untuk kelas Iqro dan Al-Qur\'an. Segera daftarkan putra-putri Anda sebelum kuota penuh.',
+  //     date: '05 Juli 2026'
+  //   },
+  //   {
+  //     title: 'Santri Raih Juara di Lomba Tilawah Tingkat Kecamatan',
+  //     category: 'Prestasi',
+  //     summary: "Ananda Fatimah berhasil meraih juara 1 lomba tilawah Al-Qur'an tingkat kecamatan, membanggakan seluruh keluarga besar TPA.",
+  //     date: '28 Juni 2026'
+  //   }
+  // ];
 
-  function loadNews() {
-    try {
-      const stored = localStorage.getItem(NEWS_STORAGE_KEY);
-      return stored ? JSON.parse(stored) : defaultNews;
-    } catch (e) {
-      console.error('Gagal memuat data berita:', e);
-      return defaultNews;
-    }
-  }
+  // function loadNews() {
+  //   try {
+  //     const stored = localStorage.getItem(NEWS_STORAGE_KEY);
+  //     return stored ? JSON.parse(stored) : defaultNews;
+  //   } catch (e) {
+  //     console.error('Gagal memuat data berita:', e);
+  //     return defaultNews;
+  //   }
+  // }
 
-  function saveNews(newsArray) {
-    try {
-      localStorage.setItem(NEWS_STORAGE_KEY, JSON.stringify(newsArray));
-    } catch (e) {
-      console.error('Gagal menyimpan data berita:', e);
-    }
-  }
+  // function saveNews(newsArray) {
+  //   try {
+  //     localStorage.setItem(NEWS_STORAGE_KEY, JSON.stringify(newsArray));
+  //   } catch (e) {
+  //     console.error('Gagal menyimpan data berita:', e);
+  //   }
+  // }
 
-  let newsData = loadNews();
+  // let newsData = loadNews();
 
-  const categoryStyles = {
-    'Kegiatan':    'bg-emerald-100 text-emerald-700',
-    'Pengumuman':  'bg-amber-100 text-amber-700',
-    'Prestasi':    'bg-blue-100 text-blue-700',
-    'Kajian':      'bg-purple-100 text-purple-700',
-  };
+  // const categoryStyles = {
+  //   'Kegiatan':    'bg-emerald-100 text-emerald-700',
+  //   'Pengumuman':  'bg-amber-100 text-amber-700',
+  //   'Prestasi':    'bg-blue-100 text-blue-700',
+  //   'Kajian':      'bg-purple-100 text-purple-700',
+  // };
 
-  const newsGrid = document.getElementById('newsGrid');
-  const emptyState = document.getElementById('emptyState');
+  // const newsGrid = document.getElementById('newsGrid');
+  // const emptyState = document.getElementById('emptyState');
 
-  function renderNews() {
-    newsGrid.innerHTML = '';
+  // function renderNews() {
+  //   newsGrid.innerHTML = '';
 
-    if (newsData.length === 0) {
-      emptyState.classList.remove('hidden');
-      return;
-    }
-    emptyState.classList.add('hidden');
+  //   if (newsData.length === 0) {
+  //     emptyState.classList.remove('hidden');
+  //     return;
+  //   }
+  //   emptyState.classList.add('hidden');
 
-    // Tampilkan berita terbaru di urutan paling atas
-    newsData.slice().reverse().forEach(function (item, i) {
-      const badgeClass = categoryStyles[item.category] || 'bg-gray-100 text-gray-700';
-      const card = document.createElement('article');
-      card.className = 'bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fadeUp';
-      card.style.animationDelay = (i * 0.05) + 's';
-      card.innerHTML =
-        '<div class="flex items-center justify-between mb-4">' +
-          '<span class="text-xs font-semibold px-3 py-1 rounded-full ' + badgeClass + '">' + item.category + '</span>' +
-          '<span class="text-xs text-gray-400">' + item.date + '</span>' +
-        '</div>' +
-        '<h3 class="font-display text-lg text-islamic-900 mb-2 leading-snug">' + item.title + '</h3>' +
-        '<p class="text-gray-600 text-sm leading-relaxed">' + item.summary + '</p>';
-      newsGrid.appendChild(card);
-    });
-  }
+  //   // Tampilkan berita terbaru di urutan paling atas
+  //   newsData.slice().reverse().forEach(function (item, i) {
+  //     const badgeClass = categoryStyles[item.category] || 'bg-gray-100 text-gray-700';
+  //     const card = document.createElement('article');
+  //     card.className = 'bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fadeUp';
+  //     card.style.animationDelay = (i * 0.05) + 's';
+  //     card.innerHTML =
+  //       '<div class="flex items-center justify-between mb-4">' +
+  //         '<span class="text-xs font-semibold px-3 py-1 rounded-full ' + badgeClass + '">' + item.category + '</span>' +
+  //         '<span class="text-xs text-gray-400">' + item.date + '</span>' +
+  //       '</div>' +
+  //       '<h3 class="font-display text-lg text-islamic-900 mb-2 leading-snug">' + item.title + '</h3>' +
+  //       '<p class="text-gray-600 text-sm leading-relaxed">' + item.summary + '</p>';
+  //     newsGrid.appendChild(card);
+  //   });
+  // }
 
-  renderNews();
+  // renderNews();
 
-  // Modal: buka / tutup
-  const newsModal = document.getElementById('newsModal');
-  const openModalBtn = document.getElementById('openModalBtn');
-  const closeModalBtn = document.getElementById('closeModalBtn');
-  const newsForm = document.getElementById('newsForm');
+  // // Modal: buka / tutup
+  // const newsModal = document.getElementById('newsModal');
+  // const openModalBtn = document.getElementById('openModalBtn');
+  // const closeModalBtn = document.getElementById('closeModalBtn');
+  // const newsForm = document.getElementById('newsForm');
 
-  function openModal() {
-    newsModal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal() {
-    newsModal.classList.add('hidden');
-    document.body.style.overflow = '';
-    newsForm.reset();
-  }
+  // function openModal() {
+  //   newsModal.classList.remove('hidden');
+  //   document.body.style.overflow = 'hidden';
+  // }
+  // function closeModal() {
+  //   newsModal.classList.add('hidden');
+  //   document.body.style.overflow = '';
+  //   newsForm.reset();
+  // }
 
-  openModalBtn.addEventListener('click', openModal);
-  closeModalBtn.addEventListener('click', closeModal);
-  newsModal.addEventListener('click', function (e) {
-    if (e.target === newsModal) closeModal();
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !newsModal.classList.contains('hidden')) closeModal();
-  });
+  // openModalBtn.addEventListener('click', openModal);
+  // closeModalBtn.addEventListener('click', closeModal);
+  // newsModal.addEventListener('click', function (e) {
+  //   if (e.target === newsModal) closeModal();
+  // });
+  // document.addEventListener('keydown', function (e) {
+  //   if (e.key === 'Escape' && !newsModal.classList.contains('hidden')) closeModal();
+  // });
 
-  // Submit form tambah berita
-  newsForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+  // // Submit form tambah berita
+  // newsForm.addEventListener('submit', function (e) {
+  //   e.preventDefault();
 
-    const title = document.getElementById('newsTitle').value.trim();
-    const category = document.getElementById('newsCategory').value;
-    const summary = document.getElementById('newsSummary').value.trim();
+  //   const title = document.getElementById('newsTitle').value.trim();
+  //   const category = document.getElementById('newsCategory').value;
+  //   const summary = document.getElementById('newsSummary').value.trim();
 
-    if (!title || !summary) return;
+  //   if (!title || !summary) return;
 
-    const today = new Date();
-    const formattedDate = today.toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' });
+  //   const today = new Date();
+  //   const formattedDate = today.toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' });
 
-    newsData.push({ title: title, category: category, summary: summary, date: formattedDate });
-    saveNews(newsData);
-    renderNews();
-    closeModal();
+  //   newsData.push({ title: title, category: category, summary: summary, date: formattedDate });
+  //   saveNews(newsData);
+  //   renderNews();
+  //   closeModal();
 
-    // Scroll agar berita baru terlihat
-    document.getElementById('berita').scrollIntoView({ behavior: 'smooth' });
-  });
+  //   // Scroll agar berita baru terlihat
+  //   document.getElementById('berita').scrollIntoView({ behavior: 'smooth' });
+  // });
 
   /* ---------------------------------------------------------
      4. FOOTER: tahun otomatis
