@@ -51,16 +51,16 @@ document.addEventListener('DOMContentLoaded', function () {
   --------------------------------------------------------- */
   const galleryPhotos = [
     // { url: 'assets/Mtto.jpeg', caption: 'Mengaji bersama di kelas' },
-    { url: 'assets/foto1.jpeg', caption: 'Belajar membaca Al-Qur\'an' },
-    { url: 'assets/foto2.jpeg', caption: 'Kegiatan bersama santri' },
-    { url: 'assets/foto3.jpeg', caption: 'Belajar sambil bermain' },
-    { url: 'assets/foto4.jpeg', caption: 'Suasana kelas TPA' },
-    { url: 'assets/foto5.jpeg', caption: 'Praktik hafalan doa harian' },
+    { url: 'assets/foto1.jpeg', caption: 'Santri TPQ Al Muslih Aik Ijo' },
+    { url: 'assets/foto2.jpeg', caption: 'Kegiatan Santri  },
+    { url: 'assets/foto3.jpeg', caption: 'Halaman Depan TPQ Al Muslih Aik Ijo },
+    { url: 'assets/foto4.jpeg', caption: 'Suasana kelas TPQ' },
+    { url: 'assets/foto5.jpeg', caption: 'Pemberian Setifikat Lulus Ujian Iqro 1-6' },
     { url: 'assets/foto6.jpeg', caption: 'Kebersamaan santri' },
-    { url: 'assets/foto7.jpeg', caption: 'Buku & Al-Qur\'an santri' },
-    { url: 'assets/foto8.jpeg', caption: 'Kegiatan tahfiz harian' },
-    { url: 'assets/foto9.jpeg', caption: 'Semangat belajar santri' },
-    { url: 'assets/foto10.jpeg', caption: 'Halaman TPA Al Muslih' },
+    { url: 'assets/foto7.jpeg', caption: 'Kegiatan Sebelum Setoran Santri TPQ' },
+    { url: 'assets/foto8.jpeg', caption: 'Rizwan Hadi Santri Lulus Ujian Iqro 1-6' },
+    { url: 'assets/foto9.jpeg', caption: 'Kegiatan Tahfiz Santri TPQ },
+    { url: 'assets/foto10.jpeg', caption: 'Ujian Tahfiz Santriwati atas nama Maria Surah An-Nas-Adh Dhuha' },
   ];
 
   const carouselTrack = document.getElementById('carouselTrack');
