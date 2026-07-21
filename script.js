@@ -52,14 +52,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const galleryPhotos = [
     // { url: 'assets/Mtto.jpeg', caption: 'Mengaji bersama di kelas' },
     { url: 'assets/foto1.jpeg', caption: 'Santri TPQ Al Muslih Aik Ijo' },
-    { url: 'assets/foto2.jpeg', caption: 'Kegiatan Santri  },
-    { url: 'assets/foto3.jpeg', caption: 'Halaman Depan TPQ Al Muslih Aik Ijo },
+    { url: 'assets/foto2.jpeg', caption: 'Kegiatan Santri' },
+    { url: 'assets/foto3.jpeg', caption: 'Halaman Depan TPQ Al Muslih Aik Ijo' },
     { url: 'assets/foto4.jpeg', caption: 'Suasana kelas TPQ' },
     { url: 'assets/foto5.jpeg', caption: 'Pemberian Setifikat Lulus Ujian Iqro 1-6' },
     { url: 'assets/foto6.jpeg', caption: 'Kebersamaan santri' },
     { url: 'assets/foto7.jpeg', caption: 'Kegiatan Sebelum Setoran Santri TPQ' },
     { url: 'assets/foto8.jpeg', caption: 'Rizwan Hadi Santri Lulus Ujian Iqro 1-6' },
-    { url: 'assets/foto9.jpeg', caption: 'Kegiatan Tahfiz Santri TPQ },
+    { url: 'assets/foto9.jpeg', caption: 'Kegiatan Tahfiz Santri TPQ' },
     { url: 'assets/foto10.jpeg', caption: 'Ujian Tahfiz Santriwati atas nama Maria Surah An-Nas-Adh Dhuha' },
   ];
 
@@ -98,18 +98,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  function goToSlide(index) {
-    currentSlide = (index + slideElements.length) % slideElements.length;
+//   function goToSlide(index) {
+//     currentSlide = (index + slideElements.length) % slideElements.length;
 
-    const slide = slideElements[currentSlide];
+//     const slide = slideElements[currentSlide];
 
-    carouselTrack.scrollTo({
-        left: slide.offsetLeft,
-        behavior: "smooth"
-    });
+//     carouselTrack.scrollTo({
+//         left: slide.offsetLeft,
+//         behavior: "smooth"
+//     });
 
-    updateActiveDot();
-}
+//     updateActiveDot();
+// }
 
   prevBtn.addEventListener('click', function () { goToSlide(currentSlide - 1); });
   nextBtn.addEventListener('click', function () { goToSlide(currentSlide + 1); });
